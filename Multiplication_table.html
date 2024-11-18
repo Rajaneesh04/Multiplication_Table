@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Multiplication table generator</title>
+    <link rel="stylesheet" href="style2.css">
+</head>
+<style>
+    label{
+        font-weight: 700;
+        color: green;
+    }
+    .search{
+        display: flex;
+        flex-direction: column;
+        margin-top: 30px;
+        justify-content: center;
+        align-items: center;
+        background-color: white;
+    }
+    #gen{
+        background-color: aqua;
+        border: none;
+        cursor: pointer;
+        border-radius: 40px;
+    }
+    .show{
+        margin-top: 20px;
+        background-color: lightcyan;
+    }
+    .com{
+        margin: 10px 10px;
+        padding: 10px 10px;
+        background-color: blue;
+        border: none;
+    }
+</style>
+<body>
+    <h1><center>Multiplication table generator</center></h1>
+    <div class="search">
+        <input type="number" class="com" id="num" placeholder="Enter Number">
+        <input type="number" class="times com" placeholder="How many times">
+        <button type="submit" id="gen" class="com">Generate Table</button>
+    </div>
+    <div class="show"></div>
+    <script>
+        const num = document.querySelector("#num");
+        const btn = document.querySelector("#gen");
+        const show = document.querySelector(".show");
+        const times = document.querySelector(".times");
+        btn.addEventListener("click", () => {
+            let t = times.value;
+            show.innerHTML = null;
+            let n = num.value;
+            console.log(n);
+            for (let i = 1; i <= t; i++) {
+                let a = `${n}x ${i} = ${n * i}<br>`;
+                show.innerHTML += a;
+            }
+        });
+    </script>
+</body>
+</html>
